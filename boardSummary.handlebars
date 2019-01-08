@@ -1,0 +1,48 @@
+<div class="bst container">
+{{~#if board.closed~}}
+    <div class="bst badges"><span class="bst badge is-closed"><span class="badge-text">Board Closed</span></span></div>
+{{~else~}}
+    <div class="bst summary">
+        {{~#if options.showLists~}}
+        <span class="bst lists" title="Active lists"><span class="badge-icon icon-sm icon-list"></span><span>{{board.lists}}</span></span>
+        {{~/if~}}
+        {{~#if options.showCards~}}
+        <span class="bst cards" title="Active cards"><span class="badge-icon icon-sm icon-card"></span><span>{{board.cardsOpen}}</span></span>
+        {{~/if~}}
+        {{~#if options.showCheckItems~}}
+            {{~#if board.checkItems~}}
+            <span class="bst checklist" title="Checklist Items"><span class="badge-icon icon-sm icon-checklist"></span><span>{{board.checkItemsChecked}}/{{board.checkItems}}</span></span>
+            {{~/if~}}
+        {{~/if~}}
+        {{~#if options.showComplete~}}
+        <span class="bst complete" title="Cards complete"><span class="badge-icon icon-sm icon-check"></span><span>{{board.completePercent}}%</span></span>
+        {{~/if~}}
+    </div><div class="bst badges">
+        {{~#if options.showPastDue~}}
+            {{~#if board.pastDue~}}
+            <span class="bst badge is-due-past" title="Cards are past due"><span class="badge-icon icon-sm icon-clock"></span><span class="badge-text">{{board.pastDue}}{{#unless options.showShortDueDates}} past{{/unless}}</span></span>
+            {{~/if~}}
+        {{~/if~}}
+        {{~#if options.showDueNow~}}
+            {{~#if board.dueNow~}}
+            <span class="bst badge is-due-now" title="Cards recently overdue"><span class="badge-icon icon-sm icon-clock"></span><span class="badge-text">{{board.dueNow}}{{#unless options.showShortDueDates}} due{{/unless}}</span></span>
+            {{~/if~}}
+        {{~/if~}}
+        {{~#if options.showDueToday~}}
+            {{~#if board.dueToday~}}
+            <span class="bst badge is-due-soon" title="Cards due in less than 24 hours"><span class="badge-icon icon-sm icon-clock"></span><span class="badge-text">{{board.dueToday}}{{#unless options.showShortDueDates}} today{{/unless}}</span></span>
+            {{~/if~}}
+        {{~/if~}}
+        {{~#if options.showDueSoon~}}
+            {{~#if board.dueSoon~}}
+            <span class="bst badge is-due-future" title="Cards due in next {{options.dueSoonDays}} days"><span class="badge-icon icon-sm icon-clock"></span><span class="badge-text">{{board.dueSoon}}{{#unless options.showShortDueDates}} soon{{/unless}}</span></span>
+            {{~/if~}}
+        {{~/if~}}
+        {{~#if options.showDueComplete~}}
+            {{~#if board.dueComplete~}}
+            <span class="bst badge is-due-complete" title="Cards with due dates complete"><span class="badge-icon icon-sm icon-clock"></span><span class="badge-text">{{board.dueComplete}}{{#unless options.showShortDueDates}} complete{{/unless}}</span></span>
+            {{~/if~}}
+        {{~/if~}}
+    </div>
+{{~/if~}}
+</div>

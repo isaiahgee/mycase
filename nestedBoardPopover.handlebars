@@ -1,0 +1,26 @@
+<div class="bst">
+    <div class="pop-over-header js-pop-over-header"><span class="pop-over-header-title">Create Nested Board</span><a href="#" class="pop-over-header-close-btn icon-sm icon-close"></a></div>
+    <div><div class="pop-over-content js-pop-over-content u-fancy-scrollbar js-tab-parent"><div><div>
+        <div class="bst-title">Create new board or pick existing board:</div>
+        <div class="form-grid"><div class="button-link setting form-grid-child form-grid-child-full">
+            <span class="label">Board</span><span class="value js-board-value">
+                {{~#if selectedBoardName~}}{{selectedBoardName}}{{~else~}}- create new board -{{~/if~}}
+            </span><label>Board</label>
+            <select class="bst js-select-board">
+                <optgroup label="New Board"><option value="new">- create new board -</option></optgroup>
+                {{#each organizations~}}
+                    <optgroup label="{{name}} Boards">
+                        {{~#each boards~}}
+                            <option value="{{url}}" {{~#if selected}} selected="selected"{{/if}}>{{name}}</option>
+                        {{~/each~}}
+                    </optgroup>
+                {{~/each~}}
+            </select>
+        </div></div>
+        <div class="bst-new-board-options {{~#if selectedBoardName}} hidden{{/if}}"><div><input type="checkbox" id="bst-useSettings" checked="checked"><label for="bst-useSettings">Keep board settings</label></div>
+            <div><input type="checkbox" id="bst-convertChecklists" checked="checked"><label for="bst-convertChecklists">Move checklists/items to lists/cards</label></div>
+            <div class="indent"><input type="checkbox" id="bst-deleteChecklists" checked="checked"><label for="bst-deleteChecklists">Delete empty checklists after move</label></div></div>
+        <input class="primary wide js-submit" type="submit" value="Nest Board">
+        <div class="warn">Warning: existing description will be overwritten</div>
+    </div></div></div></div>
+</div>

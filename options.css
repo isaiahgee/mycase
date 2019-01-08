@@ -1,0 +1,85 @@
+/*csslint ids: false, overqualified-elements: false */
+
+body {
+    min-width: 450px;
+}
+
+div.container {
+    margin-top: 10px;
+}
+
+    div.container div.container:last-child {
+        margin-left: 20px;
+        padding-bottom: 0;
+    }
+
+    div.container span {
+        display: inline-block;
+        padding-left: 4px;
+    }
+
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+    option[value='green'] {
+        color: #61BD4F;
+    }
+
+    option[value='yellow'] {
+        color: #F2D600;
+    }
+
+    option[value='orange'] {
+        color: #FFAB4A;
+    }
+
+    option[value='red'] {
+        color: #EB5A46;
+    }
+
+    option[value='purple'] {
+        color: #C377E0;
+    }
+
+    option[value='blue'] {
+        color: #0079BF;
+    }
+
+    option[value='pink'] {
+        color: #FF80CE;
+    }
+
+    option[value='sky'] {
+        color: #00C2E0;
+    }
+
+    option[value='lime'] {
+        color: #51E898;
+    }
+
+    option[value='black'] {
+        color: #4D4D4D;
+    }
+
+    option[value='null'] {
+        color: #B6BBBF;
+    }
+
+fieldset {
+    margin-bottom: 10px;
+}
+
+    legend {
+        font-size: 1.3em;
+        padding: 0 5px;
+    }
+    
+    fieldset div.container:last-child {
+        padding-bottom: 10px;
+    }
+
+div#status, button {
+    margin: 2px;    
+}

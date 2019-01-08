@@ -1,0 +1,125 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Board Summary For Trello Extension Options</title>
+    <link rel="stylesheet" type="text/css" href="styles/options.css" />
+</head>
+<body>
+    <fieldset>
+        <legend>Global Board Summary Options</legend>
+        <div class="container">
+            <input type="checkbox" id="homeBoardSummary">
+            <label for="homeBoardSummary">Show board summary on home page</label>
+        </div>
+        <div class="container">
+            <input type="checkbox" id="nestedBoardSummary">
+            <label for="nestedBoardSummary">Show board summary for nested boards</label>
+        </div>
+        <div class="container">
+            <span>Update board summary every <input type="number" id="refreshTime" min="2" step="1" style="width: 35px; text-align: center;" /> minutes</span>
+        </div>
+        <div class="container">
+            <input type="checkbox" id="homePageWide">
+            <label for="homePageWide">Display boards in wide format on boards home page</label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Board Summary Content Options</legend>
+        <div class="container">
+            <input type="checkbox" id="lists">
+            <label for="lists">Show number of active lists</label>
+        </div>
+        <div class="container">
+            <input type="checkbox" id="cards">
+            <label for="cards">Show number of active cards</label>
+        </div>
+        <div class="container">
+            <input type="checkbox" id="checkItems">
+            <label for="checkItems">Show number of complete / total checklist items</label>
+        </div>
+        <div class="container">
+            <input type="checkbox" id="complete">
+            <label for="complete">Show percentage of completed (i.e. archived) cards</label>
+        </div>
+        <div class="container">
+            <input type="checkbox" id="pastDue">
+            <label for="pastDue">Show number of cards past due (&gt; 36 hours ago)</label>
+        </div>
+        <div class="container">
+            <input type="checkbox" id="dueNow">
+            <label for="dueNow">Show number of cards due now (last 36 hours)</label>
+        </div>
+        <div class="container">
+            <input type="checkbox" id="dueToday">
+            <label for="dueToday">Show number of cards due today (next 24 hours)</label>
+        </div>
+        <div class="container">
+            <input type="checkbox" id="dueSoon">
+            <label for="dueSoon">Show number of cards due in the following </label>
+            <input type="number" id="dueSoonDays" min="1" step="1" style="width: 35px; text-align: center;" /> days
+        </div>
+        <div class="container">
+            <input type="checkbox" id="dueComplete">
+            <label for="dueComplete">Show number of cards with due dates complete</label>
+        </div>
+        <div class="container">
+            <input type="checkbox" id="shortDueDate">
+            <label for="shortDueDate">Show abbreviated due date badges</label>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Nested Board Options</legend>
+        <div class="container">
+            <span>Nested board icon color </span>
+            <select id="nestedBoardIcon">
+                <optgroup label="Default">
+                    <option value="default">Default color (blue)</option>
+                </optgroup>
+                <optgroup label="Card label">
+                    <option value="label">Card label (first label)</option>
+                </optgroup>
+                <optgroup label="Fixed color">
+                    <option value="green">Green</option>
+                    <option value="yellow">Yellow</option>
+                    <option value="orange">Orange</option>
+                    <option value="red">Red</option>
+                    <option value="purple">Purple</option>
+                    <option value="blue">Blue</option>
+                    <option value="pink">Pink</option>
+                    <option value="sky">Sky</option>
+                    <option value="lime">Lime</option>
+                    <option value="black">Black</option>
+                    <option value="null">Gray</option>
+                </optgroup>
+                <optgroup label="No icon">
+                    <option value="none">No icon</option>
+                </optgroup>
+            </select>
+        </div>
+        <div class="container">
+            <input type="checkbox" id="showCardLabels">
+            <label for="showCardLabels">Show card labels for nested boards</label>
+        </div>
+        <div class="container">
+            <input type="checkbox" id="showCardBadges">
+            <label for="showCardBadges" title="Badges include icons for comments, subscribed, due date, attachments">Show card badges for nested boards</label>
+            <div class="container">
+                <input type="checkbox" id="hideCardDescription" checked="checked" disabled="true">
+                <label for="hideCardDescription">Hide description badge for nested boards </label>
+            </div>
+        </div>
+        <div class="container">
+            <input type="checkbox" id="showCardMembers">
+            <label for="showCardMembers">Show card members for nested boards</label>
+        </div>
+    </fieldset>
+    <div id="status"></div>
+    <div class="container">
+        <button id="save">Save</button>
+    </div>
+
+    <script src="scripts/options.js"></script>
+</body>
+</html>
